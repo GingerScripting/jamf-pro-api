@@ -48,7 +48,7 @@ touch /Users/"$loggedInUser"/Desktop/"$reportType".csv
 #adds header fields to the CSV
 echo "Profile Name","Scope" >> /Users/"$loggedInUser"/Desktop/"$reportType".csv
 
-#loops through all computer IDs in the advanced computer search indicated
+#loops through all profile IDs
 profileIDs=($(/usr/bin/curl -X GET -H "Accept: application/xml" -s -u "${jssUser}":"${jssPassword}" ${jssURL}/JSSResource/osxconfigurationprofiles | xpath "os_x_configuration_profiles/os_x_configuration_profile/id" 2> /dev/null | awk -F'</?id>' '{for(i=2;i<=NF;i++) print $i}'))
 for id in "${profileIDs[@]}"; do
 OLDIFS=$IFS
