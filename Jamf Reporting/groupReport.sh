@@ -82,4 +82,4 @@ for id in "${profileIDs[@]}"; do
 done
 IFS=$OLDIFS
 
-echo "Complete. A CSV file has been created on the desktop showing which policies are using which package."
+echo "Complete. A CSV file has been created on the desktop showing which groups are in use by are using which policy or profile."
